@@ -6,6 +6,12 @@ resource "tls_private_key" "nautilus_kp" {
   rsa_bits  = 4096
 }
 
+resource "aws_key_pair" "xfusion_kp" {
+  key_name   = "xfusion-kp"
+  public_key = tls_private_key.xfusion_key.public_key_openssh
+}
+
+
 # save to local path //
 
 resource "local_file" "nautilus_kp" {
