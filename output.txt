@@ -1,0 +1,50 @@
+Terraform used the selected providers to generate the following execution plan. Resource
+actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # local_file.nautilus-pem will be created
+  + resource "local_file" "nautilus-pem" {
+      + content              = (sensitive value)
+      + content_base64sha256 = (known after apply)
+      + content_base64sha512 = (known after apply)
+      + content_md5          = (known after apply)
+      + content_sha1         = (known after apply)
+      + content_sha256       = (known after apply)
+      + content_sha512       = (known after apply)
+      + directory_permission = "0777"
+      + file_permission      = "0600"
+      + filename             = "home/bob/nautilus-kp.pem"
+      + id                   = (known after apply)
+    }
+
+  # tls_private_key.nautilus-kp will be created
+  + resource "tls_private_key" "nautilus-kp" {
+      + algorithm                     = "RSA"
+      + ecdsa_curve                   = "P224"
+      + id                            = (known after apply)
+      + private_key_openssh           = (sensitive value)
+      + private_key_pem               = (sensitive value)
+      + private_key_pem_pkcs8         = (sensitive value)
+      + public_key_fingerprint_md5    = (known after apply)
+      + public_key_fingerprint_sha256 = (known after apply)
+      + public_key_openssh            = (known after apply)
+      + public_key_pem                = (known after apply)
+      + rsa_bits                      = 4096
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+tls_private_key.nautilus-kp: Creating...
+tls_private_key.nautilus-kp: Creation complete after 1s [id=e43ed0a4d517f0b015b018b33b4c625d9cc1d57f]
+local_file.nautilus-pem: Creating...
+local_file.nautilus-pem: Creation complete after 0s [id=bd8671cd2894041659839fea1f10b0a458d6393e]
+
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
