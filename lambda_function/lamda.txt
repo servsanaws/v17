@@ -1,0 +1,12 @@
+# get the lambda aws role arn //
+
+aws iam get-role --role-name lambda_execution_role
+
+# create the lambda function with the zip file //
+
+aws lambda create-function \
+    --function-name datacenter-lambda-cli \
+    --runtime python3.12 \
+    --zip-file fileb://function.zip \
+    --handler lambda_function.lambda_handler \
+    --role arn:aws:iam::350667977590:role/lambda_execution_role
